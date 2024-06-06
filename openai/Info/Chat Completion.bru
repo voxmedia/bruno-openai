@@ -1,0 +1,35 @@
+meta {
+  name: Chat Completion
+  type: http
+  seq: 2
+}
+
+post {
+  url: https://api.openai.com/v1/chat/completions
+  body: json
+  auth: none
+}
+
+headers {
+  Content-Type: application/json
+  Authorization: Bearer {{OPENAI_API_KEY}}
+}
+
+body:json {
+  {
+    "model": "{{MODEL}}",
+    "messages": [
+      {
+        "role": "user",
+        "content": "{{PROMPT}}"
+      }
+    ],
+    "temperature": {{TEMPERATURE}}
+  }
+}
+
+vars:pre-request {
+  PROMPT: How do vacuum cleaners work?
+  MODEL: gpt-3.5-turbo
+  TEMPERATURE: 1.0
+}
