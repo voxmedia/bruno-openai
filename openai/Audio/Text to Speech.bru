@@ -1,0 +1,32 @@
+meta {
+  name: Text to Speech
+  type: http
+  seq: 2
+}
+
+post {
+  url: https://api.openai.com/v1/audio/speech
+  body: json
+  auth: none
+}
+
+headers {
+  Content-Type: application/json
+  Authorization: Bearer {{OPENAI_API_KEY}}
+}
+
+body:json {
+  {
+    "model": "{{MODEL}}",
+    "input": "{{PROMPT}}",
+    "voice": "{{VOICE}}",
+    "response_format": "mp3",
+    "speed": "1.0"
+  }
+}
+
+vars:pre-request {
+  PROMPT: We the People of the United States, in Order to form a more perfect Union, establish Justice, insure domestic Tranquility, provide for the common defence, promote the general Welfare, and secure the Blessings of Liberty to ourselves and our Posterity, do ordain and establish this Constitution for the United States of America.
+  MODEL: tts-1
+  VOICE: nova
+}

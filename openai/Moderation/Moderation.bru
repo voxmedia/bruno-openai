@@ -1,0 +1,26 @@
+meta {
+  name: Moderation
+  type: http
+  seq: 2
+}
+
+post {
+  url: https://api.openai.com/v1/moderations
+  body: json
+  auth: none
+}
+
+headers {
+  Content-Type: application/json
+  Authorization: Bearer {{OPENAI_API_KEY}}
+}
+
+body:json {
+  {
+    "input": "{{INPUT}}"
+  }
+}
+
+vars:pre-request {
+  INPUT: When in the Course of human events, it becomes necessary for one people to dissolve the political bands which have connected them with another, and to assume among the powers of the earth, the separate and equal station to which the Laws of Nature and of Nature's God entitle them, a decent respect to the opinions of mankind requires that they should declare the causes which impel them to the separation.
+}
