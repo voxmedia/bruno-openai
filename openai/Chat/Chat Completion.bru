@@ -20,6 +20,10 @@ body:json {
     "model": "{{MODEL}}",
     "messages": [
       {
+        "role": "system",
+        "content": "{{SYSTEM}}"
+      },
+      {
         "role": "user",
         "content": "{{PROMPT}}"
       }
@@ -32,4 +36,5 @@ vars:pre-request {
   PROMPT: How do vacuum cleaners work?
   MODEL: gpt-3.5-turbo
   TEMPERATURE: 1.0
+  SYSTEM: You are a helpful assistant.
 }
