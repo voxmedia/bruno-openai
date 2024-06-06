@@ -24,6 +24,12 @@ Back on the [/api-keys](https://platform.openai.com/api-keys) page, on the top-l
 
 **Note:** After you click "Create secret key," you'll have to copy and paste it into your password manager. You won't be able to retrieve it later from the website.
 
+## Your first API requests
+
+In the Bruno app, click down to select "List Models" and click the right-arrow near the top-right. The "Response" pane should fill with a list of dozens of available models.
+
+Select "Chat Completion". Under the "Body" tab you'll see the text that gets `POST`ed. Under "Vars" you'll see the options. Click the right-arrow. The response will take a few seconds. Under "Timeline" you'll see the HTTP request, and under "Response" you'll see the JSON response.
+
 ## OpenAI Playground
 
 As an alternative to the Bruno collection in this repo, you can work directly on OpenAI's website. This is for experimenting. And you'll need your own API key. Try it here:
